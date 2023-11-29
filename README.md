@@ -10,8 +10,8 @@ Video generator for the Lysterfield Lake project.
 
 <a href="https://medium.com/@superhighfives/lysterfield-lake-71345aa8c016">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/superhighfives/lysterfield-lake/assets/449385/5b88718d-d18d-426d-9aea-307b9404de90">
-    <img src="https://github.com/superhighfives/lysterfield-lake/assets/449385/a29f28ee-e5a6-4268-98f0-ab35a1f0448b">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/superhighfives/lysterfield-lake-pipeline/assets/449385/5ccd6397-50dd-492c-98bb-ca0c2ab4671b">
+    <img src="https://github.com/superhighfives/lysterfield-lake-pipeline/assets/449385/74ed220c-6c68-4090-a91b-7d6778e78ee2">
   </picture>
 </a>
 
