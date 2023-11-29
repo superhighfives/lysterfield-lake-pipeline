@@ -2,7 +2,7 @@
 
 Video generator for the Lysterfield Lake project.
 
-🚨 **Please note:** 🚨 This repository is largely spaghetti code, intended purely as a resource for anyone looking to dive into aspects of how [Lysterfield Lake](https://lysterfieldlake.com/) was created. It represents the tasks completed on a Mac, while the AI heavy lifting was completed using Cog and a PC with a RTX 3060 GPU. Files specific to that process are in `/pc-settings/` That said, it should paint some of the picture (see what I did there?) of how the project works.
+🚨 **Please note:** 🚨 This repository is largely spaghetti code, intended purely as a resource for anyone looking to dive into aspects of how [Lysterfield Lake](https://lysterfieldlake.com/) was created. It represents the tasks completed on a Mac, while the AI heavy lifting was completed using [Cog](https://github.com/replicate/cog) and a PC with a RTX 3060 GPU. Files specific to that process are in `/pc-settings/` That said, it should paint some of the picture (see what I did there?) of how the project works.
 
 > The client for the app is available at [superhighfives/lysterfield-lake](https://github.com/superhighfives/lysterfield-lake)
 
