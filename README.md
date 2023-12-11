@@ -15,6 +15,20 @@ Video generator for the Lysterfield Lake project.
   </picture>
 </a>
 
+## Overview
+
+The pipeline for Lysterfield Lake is made up of a collection of bash scripts. They run a mixture of python scripts, and unix applications (like ffmpeg) to output videos and images.
+
+On the python side, data is partially passed to and from the AI models using [Cog](https://github.com/replicate/cog). It runs three models, which it expects at the following locations on your network:
+
+| Model         | Replicate                                                                | GitHub                                                                | Location                         |
+| ------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------- |
+| DiffusionCLIP | [gwang-kim/diffusionclip](https://replicate.com/gwang-kim/diffusionclip) | [gwang-kim/DiffusionCLIP](https://github.com/gwang-kim/DiffusionCLIP) | Running on http://localhost:5000 |
+| ZoeDepth      | [cjwbw/zoedepth](https://replicate.com/cjwbw/zoedepth)                   | [chenxwh/ZoeDepth](https://github.com/chenxwh/ZoeDepth)               | Running on http://localhost:5005 |
+| Real-ESRGAN   | [cjwbw/real-esrgan](https://replicate.com/cjwbw/real-esrgan)             | [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)         | Running on http://localhost:5010 |
+
+The other models should be added to the root folder, in the paths referenced in the source files.
+
 ## Toolchain
 
 - Cog ([Github](https://github.com/replicate/cog))
