@@ -70,7 +70,7 @@ do
     # process images
     source ~/miniconda3/bin/activate watercolour-generator
     python --version
-    python dreams.py --input $output/dreams/$file_name/input --output $output/dreams/$file_name/output --base $output/main/output
+    python python/dreams.py --input $output/dreams/$file_name/input --output $output/dreams/$file_name/output --base $output/main/output
 
     if [ ! -f "$output/dreams/$file_name/$file_name.mov" ]; then
         ffmpeg -y $skip -framerate $frames -i $output/dreams/$file_name/output/%04d.png -i resources/audio/lysterfield-lake.wav -shortest -t $OUTPUT_AUDIO_LENGTH -c:v libx264 -pix_fmt yuv420p $crf $output/dreams/$file_name/$file_name.mov

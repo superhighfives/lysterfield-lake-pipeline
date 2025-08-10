@@ -37,18 +37,24 @@ output=$input/output
 
 # ---------------------------
 
-f="$input/main.mov"
+f="$input/background.mov"
 echo "Processing $f file..."
 
 file=$(basename -- "$f")
 file_ext="${file##*.}"
 file_name="${file%.*}"
 
-# generate folders
-echo "✨ generating folders (input: $output/images, output: $output/output)"
+# create dir
+mkdir -p $output/main/background/
+mkdir -p $output/main/output/background/
 
-mkdir -p $output/$file_name/{images,output}
-mkdir -p $output/$file_name/output/{images,depth,alpha,resized,green,resized-background}
+# convert to images
+if [ ! -f "$output/main/background/0001.png" ]; then
+  echo "✨ convert to images at $frames frames per second"
+  ffmpeg -y $skip -i $f -r $frames $duration $output/main/background/%04d.png
+else
+  echo "✨ images already exist"
+fi
 
 echo "✨ do stuff with cog"
 if conda env list | grep ".*watercolour-generator.*" >/dev/null 2>&1; then
@@ -60,13 +66,13 @@ fi
 # process images
 source ~/miniconda3/bin/activate watercolour-generator
 python --version
-python main.py --input images --output $output/$file_name
+python python/main.py --input background --output $output/main
 
 echo "Finished generating watercolour images"
 
-if [ ! -f "$output/$file_name-compiled-images.mov" ]; then
+if [ ! -f "$output/main-compiled-background.mov" ]; then
     # if crop and move video
-    ffmpeg -y $skip -framerate $frames $duration -i $output/$file_name/output/images/%04d.png -c:v libx264 -pix_fmt yuv420p -vf scale=1024:-1 $crf $output/$file_name-compiled-images.mov
+    ffmpeg -y -framerate $frames $duration -i $output/main/output/background/%04d.png -c:v libx264 -pix_fmt yuv420p -vf scale=1024:-1 $crf $output/main-compiled-background.mov
 else
     echo "✨ video already exists"
 fi

@@ -60,7 +60,7 @@ fi
 # process images
 source ~/miniconda3/bin/activate watercolour-generator
 python --version
-python other.py --input images --output $output/$file_name
+python python/other.py --input images --output $output/$file_name
 
 echo "Finished generating other images"
 
